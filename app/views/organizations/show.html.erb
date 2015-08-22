@@ -7,3 +7,23 @@
 
 <%= link_to 'Edit', edit_organization_path(@organization) %> |
 <%= link_to 'Back', organizations_path %>
+
+<h3>All Events:</h3>
+
+<table>
+<tbody>
+  <% @events.each do |event| %>
+    <tr>
+      <td><%= event.start_at %></td>
+      <td><%= event.end_at %></td>
+      <td><%= event.name %></td>
+      <td><%= event.organization_id %></td>
+      <td><%= link_to 'Show', organization_event_path(event.organization, event) %></td>
+      <td><%= link_to 'Edit', edit_organization_event_path(event.organization, event) %></td>
+      <td><%= link_to 'Destroy', organization_event_path(event.organization, event), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</tbody>
+</table>
+
+<%= link_to 'New Event', new_organization_event_path(@organization) %>

@@ -5,10 +5,11 @@ Rails.application.routes.draw do
   post '/sessions', :to => 'sessions#create'
   get '/logout',    :to => 'sessions#logout'
 
-  resources :events
-  resources :products
   resources :orders
-  resources :organizations
+  resources :organizations do
+    resources :events
+    resources :products
+  end
   resources :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

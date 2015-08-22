@@ -15,10 +15,24 @@
   <%= @event.name %>
 </p>
 
-<p>
-  <strong>Organization:</strong>
-  <%= @event.organization_id %>
-</p>
+<%= link_to 'Edit', edit_organization_event_path(@event.organization, @event) %> |
+<%= link_to 'Back', organization_events_path(@organization) %>
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+<h3>All Products:</h3>
+
+<table>
+<tbody>
+  <% @products.each do |product| %>
+    <tr>
+      <td><%= product.name %></td>
+      <td><%= product.description %></td>
+      <td><%= product.price %></td>
+      <td><%= link_to 'Show', organization_product_path(product.organization, product) %></td>
+      <td><%= link_to 'Edit', edit_organization_product_path(product.organization, product) %></td>
+      <td><%= link_to 'Destroy', organization_product_path(product.organization, product), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</tbody>
+</table>
+
+<%= link_to 'New Product', new_organization_product_path(@organization) %>

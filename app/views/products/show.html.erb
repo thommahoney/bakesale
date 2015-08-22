@@ -15,10 +15,5 @@
   <%= @product.price %>
 </p>
 
-<p>
-  <strong>Organization:</strong>
-  <%= @product.organization_id %>
-</p>
-
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+<%= link_to 'Edit', edit_organization_product_path(@product.organization, @product) %> |
+<%= link_to 'Back', organization_products_path(@organization) %>

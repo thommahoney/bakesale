@@ -11,6 +11,7 @@ class OrganizationsController < ApplicationController
   # GET /organizations/1
   # GET /organizations/1.json
   def show
+    @events = @organization.events
   end
 
   # GET /organizations/new
@@ -29,6 +30,8 @@ class OrganizationsController < ApplicationController
 
     respond_to do |format|
       if @organization.save
+        current_user.organizations << @organization
+
         format.html { redirect_to @organization, notice: 'Organization was successfully created.' }
         format.json { render :show, status: :created, location: @organization }
       else
@@ -65,7 +68,7 @@ class OrganizationsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_organization
-      @organization = current_user.organizations.find(params[:id])
+      @organization = current_user.organizations.where(id: params[:id]).first
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
