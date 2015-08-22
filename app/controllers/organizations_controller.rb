@@ -1,10 +1,11 @@
 class OrganizationsController < ApplicationController
   before_action :set_organization, only: [:show, :edit, :update, :destroy]
+  before_filter :authorize
 
   # GET /organizations
   # GET /organizations.json
   def index
-    @organizations = Organization.all
+    @organizations = current_user.organizations
   end
 
   # GET /organizations/1
@@ -64,7 +65,7 @@ class OrganizationsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_organization
-      @organization = Organization.find(params[:id])
+      @organization = current_user.organizations.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
