@@ -10,18 +10,22 @@
 pairbear_org = Organization.create(name: 'Pairbears')
 
 thom = User.create(
+  phone: '123',
   full_name: 'Thom Mahoney',
   email: 'mahoneyt@gmail.com',
 )
 erin = User.create(
+  phone: '456',
   full_name: 'Erin Mahoney',
   email: 'erinmahoneyphoto@gmail.com',
 )
 bedford = User.create(
+  phone: '789',
   full_name: 'Bedford Williamson',
   email: 'goodbedford@gmail.com',
 )
 paul = User.create(
+  phone: '111',
   full_name: 'Paul Kim',
   email: 'paulkim517@gmail.com',
 )

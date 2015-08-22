@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  root 'sessions#new'
+  root 'pages#splash'
 
-  get '/login', to: 'sessions#new'
+  get '/login',     :to => 'sessions#login'
+  post '/sessions', :to => 'sessions#create'
+  get '/logout',    :to => 'sessions#logout'
 
   resources :events
   resources :products
