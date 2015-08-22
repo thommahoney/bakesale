@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  root 'sessions#new'
+
+  get '/login', to: 'sessions#new'
+
   resources :events
   resources :products
   resources :orders
