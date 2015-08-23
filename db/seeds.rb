@@ -44,26 +44,19 @@ burrito = Product.create(
   name: 'Burrito',
   description: "Sub par, but it's cheap",
   price: 1,
-  organization_id: pairbear_org.id,
+  event_id: masters_of_code.id,
 )
 
 water = Product.create(
   name: 'Water Bottle',
   description: "Clean, delicious water",
   price: 2,
-  organization_id: pairbear_org.id,
+  event_id: masters_of_code.id,
 )
 
 whiteboard = Product.create(
   name: 'Whiteboard',
   description: "Gently used, but effective",
   price: 3,
-  organization_id: pairbear_org.id,
+  event_id: masters_of_code.id,
 )
-
-[burrito, water, whiteboard].each do |product|
-  EventProduct.create(
-    event_id: masters_of_code.id,
-    product_id: product.id,
-  )
-end
