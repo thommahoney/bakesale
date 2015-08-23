@@ -6,7 +6,7 @@
 		<%= form_for :user, url: '/sessions', class: "form-group", method: :post do |f| %>
 		<%= f.text_field :phone , class: "form-control", placeholder: "Confirm phone number here."%>
 		<br>
-		<%= f.submit "Submit", class: "btn btn-danger" %>
+		<%= f.submit "Submit", class: "btn btn-danger", id: 'loginButton' %>
 		<% end %>
 	</div>
 	<div class="col-md-4"></div>
