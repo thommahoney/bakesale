@@ -35,7 +35,7 @@
     <div class="row">
       <% @organizations.each do |organization| %>
       <div class="col-md-4 portfolio-item">
-        <a href="#">
+        <a href="<%= organization_path(organization) %>">
          <img class="img-responsive" src="http://placehold.it/700x400" alt="">
        </a>
        <h3><%= organization.name %></h3>
