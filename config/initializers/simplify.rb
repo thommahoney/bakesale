@@ -1,2 +1,2 @@
- Simplify::public_key = 'sbpb_MzQyMjcwNjgtZTAyZi00ZjAyLWE2M2UtYWQ3YTAwMmJhZDVj'
- Simplify::private_key = 'nyWE9IpijbspvDmfc4Aqs7CrsNN/ihqAeXIqPDqlFdp5YFFQL0ODSXAOkNtXTToq'
+ Simplify::public_key = 'sbpb_NjJjNGM4YTAtMmNkYi00ZjBhLWFiODAtN2NmZjY3YTM0YmYw'
+ Simplify::private_key = '6NcKQjF0qyxpWWaz+vGFnkIEi107gFpTwCHOyxE3TNF5YFFQL0ODSXAOkNtXTToq'

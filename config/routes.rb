@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'payment/index'
+
+  post 'payment/pay'
+
   root 'pages#splash'
 
   get '/login',     :to => 'sessions#login'
