@@ -23,9 +23,9 @@ html, body {
     NAVBAR STYLES
 -----------------------------*/
 .navbar-brand {
-  font-family: logo;
-  color: #F5F8FA;
-  text-shadow: 1px 2px 4px #000000;
+  font-family: 'Lobster', serif;
+  color: black;
+  
 }
 .navbar-inner {
   background:transparent;
@@ -58,6 +58,8 @@ html, body {
   background-size: cover;
   position: relative;
   margin-top: -20px;
+  font-family: 'Lobster', serif;
+
 }
 
 .header-title {
@@ -65,6 +67,8 @@ html, body {
   color: white;
   background-position: center;
   padding: 10% 0;
+  font-family: 'Lobster', serif;
+
 }
 
 .header-title-hgroup {
@@ -89,3 +93,6 @@ html, body {
 .portfolio-item {
     margin-bottom: 25px;
 }
+
+@import "animate.css";
+/**= require "animate";*/
