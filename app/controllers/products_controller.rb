@@ -1,11 +1,13 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
-  before_action :set_organization
 
   # GET /products
   # GET /products.json
   def index
-    @products = @organization.products.all
+    event = Event.find(params[:event_id])
+    @products = event.products
+
+    render json: @products
   end
 
   # GET /products/1
@@ -15,7 +17,7 @@ class ProductsController < ApplicationController
 
   # GET /products/new
   def new
-    @product = @organization.products.new
+    @product = Product.new
   end
 
   # GET /products/1/edit
@@ -27,10 +29,15 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
 
+    binding.pry
+
     if @product.save
-      redirect_to organization_product_path(@product.organization, @product), notice: 'Product was successfully created.'
+      respond_to do |format|
+        format.html { redirect_to organization_path(@product.event.organization_id) }
+        format.json { render json: @product }
+      end
     else
-      render :new
+      raise 'thom is not awake yet'
     end
   end
 
@@ -38,9 +45,9 @@ class ProductsController < ApplicationController
   # PATCH/PUT /products/1.json
   def update
     if @product.update(product_params)
-      redirect_to organization_product_path(@product.organization, @product), notice: 'Product was successfully updated.'
+      render json: @product
     else
-      render :edit
+      raise 'thom is not awake yet'
     end
   end
 
@@ -48,7 +55,7 @@ class ProductsController < ApplicationController
   # DELETE /products/1.json
   def destroy
     @product.destroy
-    redirect_to organization_products_url(@organization), notice: 'Product was successfully destroyed.'
+    render json: @product
   end
 
   private
@@ -57,12 +64,8 @@ class ProductsController < ApplicationController
       @product = Product.find(params[:id])
     end
 
-    def set_organization
-      @organization = current_user.organizations.where(id: params[:organization_id]).first
-    end
-
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:image, :description, :price, :organization_id)
+      params.require(:product).permit(:image, :description, :price, :event_id, :name)
     end
 end

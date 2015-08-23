@@ -29,7 +29,7 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
 
       if @event.save
-        redirect_to organization_event_path(@event.organization, @event), notice: 'Event was successfully created.'
+        redirect_to organization_path(@event.organization), notice: 'Event was successfully created.'
       else
         render :new
       end
@@ -39,7 +39,7 @@ class EventsController < ApplicationController
   # PATCH/PUT /events/1.json
   def update
     if @event.update(event_params)
-      redirect_to organization_event_path(@event.organization, @event), notice: 'Event was successfully updated.'
+      redirect_to organization_path(@event.organization), notice: 'Event was successfully updated.'
     else
       render :edit
     end
@@ -49,7 +49,7 @@ class EventsController < ApplicationController
   # DELETE /events/1.json
   def destroy
     @event.destroy
-    redirect_to organization_events_url(@organization), notice: 'Event was successfully destroyed.'
+    redirect_to organization_url(@organization), notice: 'Event was successfully destroyed.'
   end
 
   private
