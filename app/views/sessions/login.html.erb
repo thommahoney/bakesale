@@ -1,12 +1,13 @@
+
 <div class="col-md-12 text-center header-title" id = "landing-img">
 	<div class="col-md-4"></div>
 	<div class="col-md-4">
-	<h2>Login</h2>
-<%= form_for :user, url: '/sessions', class: "form-group", method: :post do |f| %>
-	  <%= f.text_field :phone , class: "form-control", placeholder: "Confirm phone number here."%>
-  <br>
-  <%= f.submit "Submit", class: "btn btn-danger" %>
-<% end %>
-</div>
-<div class="col-md-4"></div>
+		<h2>Login</h2>
+		<%= form_for :user, url: '/sessions', class: "form-group", method: :post do |f| %>
+		<%= f.text_field :phone , class: "form-control", placeholder: "Confirm phone number here."%>
+		<br>
+		<%= f.submit "Submit", class: "btn btn-danger" %>
+		<% end %>
+	</div>
+	<div class="col-md-4"></div>
 </div>

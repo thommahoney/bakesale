@@ -2,14 +2,12 @@
 <html>
   <head>
     <title>Bakesale</title>
-    <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
-    <%= csrf_meta_tags %>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= csrf_meta_tags %>
   </head>
   <body>
 
@@ -49,8 +47,10 @@
 
     <%= yield %>
 
+    <%= javascript_include_tag 'application' %>
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script id="digits-sdk" src="https://cdn.digits.com/1/sdk.js"></script>
 
   </body>
 </html>
