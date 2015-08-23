@@ -29,8 +29,6 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
 
-    binding.pry
-
     if @product.save
       respond_to do |format|
         format.html { redirect_to organization_path(@product.event.organization_id) }
