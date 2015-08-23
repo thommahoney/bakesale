@@ -85,3 +85,7 @@ html, body {
   font-weight: 700;
   text-shadow: 1px 2px 2px #000000;
 }
+
+.portfolio-item {
+    margin-bottom: 25px;
+}

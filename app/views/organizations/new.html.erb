@@ -1,5 +1,21 @@
-<h1>New Organization</h1>
 
-<%= render 'form' %>
+<div class="row">
+	<div class="col-md-4"></div>
 
-<%= link_to 'Back', organizations_path %>
+	<%= form_for(@organization) do |f| %>
+		<div class="col-md-4">
+				<h3>Create Your Organization</h3>
+				<%= f.label :name %><br>
+				<%= f.text_field :name, class: "form-control" %><br>
+				<!-- this is supposed to be description -->
+				<%= f.label :name %><br>
+				<%= f.text_field :name, class: "form-control" %><br>
+				<!--  -->
+				<input type="file" name="pic" accept="image/*"><br>
+				<%= f.submit 'Submit', class: "btn btn-danger" %><br>				
+		</div>
+	<% end %>
+	<div class="col-md-4"></div>
+</div>
+
+
