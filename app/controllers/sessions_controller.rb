@@ -8,11 +8,7 @@ class SessionsController < ApplicationController
     # if we get user information back, find a user with the given phone number
     user_information = JSON.parse(response.body)
     phone_number = user_information['phone_number']
-    user = User.where(phone: phone_number).first
-    # if we don't know the user, create a new one
-    unless user
-      user = User.create!(phone: phone_number)
-    end
+    user = User.where(phone: phone_number).first_or_create
     # log in the user
     session[:user_id] = user.id
 

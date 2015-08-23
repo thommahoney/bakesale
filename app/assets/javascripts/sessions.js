@@ -18,8 +18,7 @@ $(function() {
             type: 'POST',
             data: verifyData,
             success: function(data) {
-              console.log('success', data);
-              if(data.full_name) {
+              if(data.full_name === null) {
                 // this is a new user
                 window.location = '/users/' + data.id + '/edit';
               } else {
