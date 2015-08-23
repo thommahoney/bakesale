@@ -2,7 +2,9 @@ source 'https://rubygems.org'
 
 gem 'pry'
 gem 'typhoeus'
-
+#hide keys
+gem 'figaro'
+#animates site
 gem "animate"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
